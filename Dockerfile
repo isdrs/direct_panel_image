@@ -13,7 +13,7 @@ RUN npm run build
 # Stage 2
 FROM nginx:1.13.12-alpine
 
-COPY --from=node /usr/src/app/dist/direct_panel_image /usr/share/nginx/html
+COPY --from=node /usr/src/app/dist/my-app2 /usr/share/nginx/html
 
 COPY ./nginx.conf /etc/nginx/conf.d/default.conf
 
