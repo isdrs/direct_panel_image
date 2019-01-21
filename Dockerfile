@@ -6,13 +6,17 @@ COPY package*.json ./
 
 RUN npm install
 
+RUN npm audit fix --force
+
 COPY . .
 
 RUN npm run build
 
+RUN ng serve
 # Stage 2
 FROM nginx:1.13.12-alpine
 
-COPY --from=node /usr/src/app/dist/Panel /usr/share/nginx/html
+COPY --from=node /usr/src/app/dist/panel /usr/share/nginx/html
 
 COPY ./nginx.conf /etc/nginx/conf.d/default.conf
+
