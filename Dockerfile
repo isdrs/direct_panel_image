@@ -10,7 +10,6 @@ COPY . .
 
 RUN npm run build
 
-RUN ng serve
 # Stage 2
 FROM nginx:1.13.12-alpine
 
