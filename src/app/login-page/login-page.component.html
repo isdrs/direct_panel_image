@@ -1,0 +1,52 @@
+<div class="container-fluid">
+  <div class="row">
+    <form method="post" class="col-12 col-lg-9 col-md-9 col-xl-6" id="loginForm" name="FormLogin" (ngSubmit)="onSubmit(f)"
+      #f="ngForm">
+
+      <fieldset class="rounded">
+        <header>
+          <img src="../../assets/malecostume-512.png" class="mx-auto d-block" alt="User Avatar">
+        </header>
+
+        <div class="space"></div>
+
+        <div class="form-group">
+          <label for="username" class="mr-2">نام کاربری</label>
+          <img src="../../assets/man-user.png" class="icons" id="userIcon" alt="">
+          <input id="username" class="form-control" type="text" name="usernameInput" #postTitle ngModel required>
+        </div>
+
+
+        <div class="form-group">
+          <label for="password" class="mr-2">گذرواژه</label>
+          <img src="../../assets/padlock12.png" class="icons" id="lockIcon" alt="">
+          <input id="password" class="form-control" type="password" name="passInput" #postId ngModel required>
+
+
+          <label class="small mt-2 mr-2">
+            مرا به یاد داشته باش
+            <input type="checkbox" class="checkmarkBox" value="">
+          </label>
+        </div>
+
+        <div class="form-group buttons-box">
+          <button class="btn btn-custome col-12 mt-3" id="enterBtn" (click)="validateLoginForm()">
+            ورود
+          </button>
+          <button type="button" class="btn btn-custome col-12 mt-2" id="registerBtn" name="registerBtn" routerLink="/register-page"
+            routerLinkActive="">
+            ثبت نام
+          </button>
+        </div>
+
+        <span class="text-center d-block forgetPass" routerLink="/enter-phone" routerLinkActive="">
+          گذرواژه خود را فراموش کرده اید؟
+        </span>
+
+
+      </fieldset>
+
+    </form>
+  </div>
+</div>
+<router-outlet></router-outlet>

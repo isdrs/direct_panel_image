@@ -1,0 +1,61 @@
+.container-fluid {
+  background-image: linear-gradient(180deg, #000000, #3b0b23);
+  /* background-image: radial-gradient(#389acb, #cb4a8a); */
+  /* background-image: radial-gradient(#f3c14e, #f78055); */
+}
+
+h2 {
+  /* text-align: center !important;  */
+  margin: 20px auto 0 auto !important;
+  width: 100%;
+  height: auto;
+  text-align: center;
+}
+
+video {
+  display: block !important;
+  margin: 20px auto 0 auto !important;
+}
+
+.btn-outline-warning {
+  background: transparent;
+  color: rgb(255, 145, 0);
+  border: 1px solid rgb(255, 145, 0);
+  font-size: 17px;
+}
+
+.btn-outline-warning:hover {
+  background: rgb(255, 145, 0);
+  color: white;
+  font-size: 17px;
+}
+
+.btn-outline-warning:focus {
+  background: rgb(255, 145, 0);
+  color: white;
+  font-size: 17px;
+}
+
+button {
+  box-shadow: unset !important;
+}
+
+@media only screen and (min-width:768px) {
+  .container-fluid {
+    height: 695px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .container-fluid {
+    height: 105vw;
+  }
+
+  h2 {
+    font-size: 25px;
+  }
+
+  button#startSettings {
+    margin: 0 15px 0 15px;
+  }
+}

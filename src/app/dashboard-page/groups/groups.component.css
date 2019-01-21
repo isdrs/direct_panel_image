@@ -1,0 +1,45 @@
+@font-face {
+  font-family: "titles";
+  src: url(../../../assets/Fonts/IRANSans/IRANSans.ttf);
+}
+
+@font-face {
+  font-family: "userWrite";
+  src: url(../../../assets/Fonts/iranyekan/IRANYekanRegular.ttf);
+}
+
+.container {
+  display: inline;
+  margin: 0 20px 0 20px !important;
+}
+
+table {
+  display: table !important;
+  float: left;
+  width: auto;
+  direction: rtl;
+  margin: 50px auto 0 auto;
+  user-select: none;
+  font-family: "titles";
+}
+
+th,
+td {
+  width: 200px;
+  height: auto;
+  text-align: center;
+}
+
+thead {
+  background: rgba(71, 66, 66, 0.4) !important;
+}
+
+@media only screen and (min-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+    table {
+        margin: 30px 20px 0 20px;
+    }
+}

@@ -1,0 +1,41 @@
+<div class="container-fluid">
+  <div class="row">
+    <form method="post" class="col-12 col-lg-9 col-md-9 col-xl-6" (ngSubmit)="onSubmit(f)" #f="ngForm" name="changePasswordForm">
+
+      <fieldset class="rounded">
+
+        <header>
+          <h3 class="text-light">رمز عبور جدید</h3>
+        </header>
+
+        <div class="space"></div>
+
+        <div class="form-group">
+          <img src="../../assets/icon-300x300.png" class="icons confirmCodeIcon" alt="">
+          <label for="confirmCode">کد تایید</label>
+          <input id="confirmCode" class="form-control" type="text" name="confirmCodeInput" ngModel autofocus maxlength="4" minlength="4">
+        </div>
+        
+        <div class="form-group">
+          <img src="../../assets/250130-200.png" class="icons newPassIcon" alt="">
+          <label for="newPass">گذرواژه جدید</label>
+          <input id="newPass" class="form-control" type="text" name="newPassInput" ngModel autofocus>
+        </div>
+        
+        <div class="form-group">
+          <img src="../../assets/img_268354.png" class="icons confirmPassIcon" alt="">
+          <label for="confirmPass">تایید گذرواژه</label>
+          <input id="confirmPass" class="form-control" type="text" name="confirmPassInput" ngModel autofocus>
+        </div>
+
+        <div class="form-group loader-container">
+          <button type="submit" class="btn btn-custome col-12 mt-3 changePassBtn" name="changePassBtn" (click)="validateNumberInput()">تغییر رمز</button>
+          <div id="loader" class="loader"></div>
+        </div>
+
+      </fieldset>
+
+    </form>
+  </div>
+</div>
+<router-outlet></router-outlet>

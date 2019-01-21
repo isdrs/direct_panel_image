@@ -1,0 +1,45 @@
+<div class="container-fluid">
+  <div class="row">
+    <form method="post" class="col-12 col-lg-9 col-md-9 col-xl-6" name="socialMediasInfo" (ngSubmit)="onSubmit(f)" #f="ngForm">
+      <fieldset>
+
+        <header>
+          <h3 class="text-light mt-3">
+            شبکه های اجتماعی
+          </h3>
+        </header>
+
+        <div class="space"></div>
+
+        <div class="form-group mr-2">
+          <label for="telegram" class=""> آدرس تلگرام</label>
+          <img src="../../assets/telegram-logo-png-open-2000.png" class="icons" id="telegramIcon" alt="">
+          <input id="telegram" class="form-control" type="text" ngModel name="telegramAddress" autofocus>
+        </div>
+
+        <div class="form-group mr-2">
+            <label for="instagram" class="">آدرس اینستاگرام</label>
+            <img src="../../assets/2018_social_media_popular_app_logo_instagram-512.png" class="icons" id="instagramIcon" alt="">
+            <input id="instagram" class="form-control" type="text" name="instagramAddress" ngModel>
+          </div>
+
+        <div class="form-group mr-2">
+          <label for="website" class="">آدرس وبسایت</label>
+          <img src="../../assets/14428.png" class="icons" id="websiteIcon" alt="">
+          <input id="website" class="form-control" type="text" name="websiteAddress" ngModel>
+        </div>
+
+        <div class="form-group buttons-box">
+          <button type="submit" class="btn btn-custome col-5 col-lg-4 mt-5 float-right" id="saveAndContinueBtn" (click)="validateSocialMediasForm()">
+            ذخیره و ادامه
+          </button>
+          <button type="submit" class="btn btn-custome col-5 col-lg-4 mt-5 float-left" id="skipBtn" 
+          routerLink="/dashboard-page" routerLinkActive="">
+            نادیده گرفتن
+          </button>
+        </div>
+
+      </fieldset>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+<div class="container-fluid">
+  <div class="row">
+
+    <h2 class="text-light">
+      فیلم آموزشی مرحله گذراندن تنظیمات
+    </h2>
+
+    <div class="row col-12 col-md-10 d-block mx-auto mt-5">
+      <video class="col-12 col-md-8" controls="controls" (click)="playVideo()" id="tutorialVideo">
+        <source src="../../assets/mov_bbb.mp4" type="video/mp4">
+        <source src="" type="video/">
+        مرورگر شما از ویدئو پشتیبانی نمی کند.
+      </video>
+    </div>
+
+    <button class="btn btn-outline-warning col-8 col-md-3 mt-5 d-block mx-auto" id="startSettings"
+    [routerLink]="['/social-medias']" routerLinkActive="" >
+      شروع تنظیمات
+    </button>
+  </div>
+</div>

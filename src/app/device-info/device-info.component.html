@@ -1,0 +1,38 @@
+<div class="container-fluid">
+  <div class="row">
+    <form method="post" class="col-12 col-lg-9 col-md-9 col-xl-6" name="deviceInfoForm" (ngSubmit)="onSubmit(f)" #f="ngForm">
+
+      <fieldset class="rounded">
+        <header>
+          <h2 class="text-light">
+            اطلاعات دستگاه
+          </h2>
+        </header>
+
+        <div class="space"></div>
+
+          <div class="form-group">
+            <label for="deviceSerialNumber" class="">شماره سریال دستگاه</label>
+            <img src="../../assets/zooming-on-a-bar-code.png" class="icons deviceSerialNum" alt="">
+            <input id="deviceSerialNumber" class="form-control col-12 float-right" type="number" name="deviceSerialNumberInput" autofocus="autofocus" ngModel required>
+          </div>
+
+          <div class="form-group mt-5">
+            <label for="deviceMacAddress" class="">شناسه دستگاه</label>
+            <img src="../../assets/553-512.png" class="icons deviceMac" alt="">
+            <input id="deviceMacAddress" class="form-control col-12 float-right" type="text" name="deviceMacAddressInput" ngModel required>
+          </div>
+
+
+        <div class="form-group mx-auto d-block col-5 col-md-7 mt-5">
+          <button class="btn btn-custome col-12 mt-2" id="registerBtn" (click)="validateDeviceInfoForm()">
+            ثبت نام
+          </button>
+        </div>
+
+      </fieldset>
+
+    </form>
+  </div>
+</div>
+<router-outlet></router-outlet>

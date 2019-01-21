@@ -1,0 +1,42 @@
+<div class="container-fluid">
+  <div class="row">
+    <form method="post" class="col-12 col-lg-9 col-md-10 col-xl-6" name="setMessages" (ngSubmit)="onSubmit(f)" #f="ngForm">
+      <fieldset class="rounded">
+
+        <header>
+          <!-- <h2 class="text-light">
+            تنظیم متن پیام های خوش آمد گویی و تکرار خرید
+          </h2> -->
+        </header>
+
+        <div class="space"></div>
+
+        <div class="form-group">
+          <label for="welcomeMessage" class="">متن پیام خوش آمدگویی</label>
+          <textarea id="welcomeMessage" name="setWelcomeMessage" class="form-control col-12" placeholder="متن خوش آمدگویی ..." autofocus ngModel
+          (keyup)="charCounter()"></textarea>
+          <span id="charCount">تعداد کاراکتر: 0</span>
+        </div>
+      
+
+        <div class="form-group mt-5">
+          <label for="repeatBuyMessage" class="">متن پیام تکرار خرید</label>   
+          <textarea id="repeatBuyMessage" name="setRepeatBuyMessage" class="form-control col-12" placeholder="متن تکرار خرید ..." ngModel
+          (keyup)="textCounter()"></textarea>
+          <span id="textCount">تعداد کاراکتر: 0</span>
+        </div>
+
+        <div class="form-group buttons-box">
+          <button type="submit" class="btn btn-custome col-5 col-md-3 mt-5 float-right" id="saveAndContinueBtn" (click)="validateSocialMediasForm()">
+            ذخیره و ادامه
+          </button>
+          <button type="submit" class="btn btn-custome col-5 col-md-3 mt-5 float-left" routerLink="/dashboard-page" routerLinkActive="">
+            نادیده گرفتن
+          </button>
+        </div>
+
+      </fieldset>
+    </form>
+  </div>
+</div>
+<router-outlet></router-outlet>

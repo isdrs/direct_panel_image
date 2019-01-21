@@ -1,0 +1,32 @@
+<div class="container-fluid">
+  <div class="row">
+    <form method="post" class="col-12 col-lg-9 col-md-9 col-xl-6" id="sendUserNumber" (ngSubmit)="onSubmit(f)" #f="ngForm"
+      name="sendUserNum">
+
+      <fieldset class="rounded">
+
+        <header>
+          <h3 class="text-light">تایید تلفن همراه</h3>
+        </header>
+
+        <div class="space"></div>
+
+        <div class="form-group">
+          <img src="../../assets/phone-receiver.png" id="phoneIcon" alt="">
+          <label for="verifyNum text-center mb-5">لطفا شماره خود را وارد نمایید</label>
+          <input id="verifyNum" class="form-control" type="number" name="numValidate" ngModel autofocus>
+          <small class="text-center d-block mt-2">کد حداکثر 20 ثانیه پس از ارسال شماره به دستتون میرسه</small>
+        </div>
+
+        <div class="form-group loader-container">
+          <button type="submit" class="btn btn-custome col-12 mt-3 codeReq" name="codeReq"
+          (click)="validateNumberInput(1)">تایید</button>
+          <div id="loader" class="loader"></div>
+        </div>
+
+      </fieldset>
+
+    </form>
+  </div>
+</div>
+<router-outlet></router-outlet>

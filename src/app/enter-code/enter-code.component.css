@@ -1,0 +1,158 @@
+@font-face {
+  font-family: "titles";
+  src: url(../../assets/Fonts/IRANSans/IRANSans.ttf);
+}
+
+@font-face {
+  font-family: "userWrite";
+  src: url(../../assets/Fonts/iranyekan/IRANYekanRegular.ttf);
+}
+
+fieldset {
+  height: auto;
+  border: 1px solid gray;
+  padding: 0 30px 30px 30px;
+  text-align: right;
+  box-shadow: 0 1px 2.5px 0 gray;
+  position: relative;
+  user-select: none !important;
+}
+
+header {
+  margin: 0 0 20px 0 !important;
+  width: 100% !important;
+  position: absolute;
+  left: 0px;
+  height: 70px;
+  padding: 20px 0 0 0;
+  text-align: center;
+  background-image: linear-gradient(10deg, #ffd46e, #fb6662);
+  font-family: "titles";
+}
+
+div.space {
+  width: auto;
+  height: 90px;
+}
+
+label, small {
+  font-family: "titles";
+}
+
+input {
+  direction: rtl;
+  text-align: center;
+  letter-spacing: 10px;
+  font-weight: bolder;
+  background: rgba(128, 127, 127, 0.1);
+  font-family: "userWrite";
+  height: 40px;
+}
+
+#receiveCodeIcon{
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  right: 43px;
+  top: 130px;
+  opacity: 0.5;
+}
+
+input[type=text]:hover {
+  background: rgba(128, 127, 127, 0.3);
+}
+
+input[type=text]:focus {
+  box-shadow: 0px 0px 2.5px 2px skyblue !important;
+  background: unset !important;
+  opacity: unset !important;
+}
+
+button#codeValidator:focus {
+  box-shadow: unset !important;
+}
+
+#sendAgainBtn:enabled:hover {
+  color: white;
+}
+
+#sendAgainBtn {
+  display: none;
+}
+
+.loader-container {
+  position: relative;
+}
+
+.loader {
+    position: absolute;
+    border: 3.5px solid rgb(250, 157, 157);
+    border-radius: 50%;
+    border-top: 3.5px solid rgb(197, 0, 0) ;
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    right: 100px;
+    top: 10px;
+    animation: spin 1s linear infinite; 
+}
+
+@keyframes spin {
+    from {transform: rotate(0deg)}
+    to {transform: rotate(360deg)}
+}
+
+button.btn-custome {
+  background-image: linear-gradient(30deg, #ffd46e, #fb6662);
+  color: white;
+  font-size: 19px;
+  font-family: "titles";
+  box-shadow: 0px 2px 5px 2px rgba(119, 119, 119, 0.2);
+}
+
+button.btn-custome:hover {
+  box-shadow: 0px 3px 5px 3px rgba(70, 70, 70, 0.3);
+}
+
+button:focus {
+  box-shadow: unset !important;
+}
+
+time {
+  cursor: progress;
+}
+
+@media only screen and (min-width:768px) {
+  form {
+    margin: 0 auto;
+  }
+
+  fieldset {
+    width: 370px;
+    margin: 40px auto 30px auto;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  form {
+    padding: 0 !important;
+  }
+
+  fieldset {
+    padding: 0 10px 10px 10px;
+    border: none;
+    box-shadow: unset !important;
+  }
+
+  header {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+
+  .form-group {
+    padding: 0 15px;
+  }
+  .loader {
+    right: 120px;
+  }
+}

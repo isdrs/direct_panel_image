@@ -1,0 +1,144 @@
+<div class="container-fluid">
+  <div class="row">
+    <form method="post" class="col-12 col-lg-9 col-md-9 col-xl-6 form-inline" id="registerForm" name="FormRegister"
+      (ngSubmit)="onSubmit(f)" #f="ngForm">
+
+      <fieldset class="rounded">
+        <header>
+          <h2 class="text-light">
+            ثبت نام
+          </h2>
+        </header>
+
+        <div class="space"></div>
+
+        <div class="row col-12" style="direction: rtl;">
+          <div class="form-group col-12 col-md-6">
+            <label for="firstName" class="mr-2 float-right mb-2">نام</label>
+            <img src="../../assets/img_125299.png" class="icons" id="fNameIcon" alt="">
+            <input id="firstName" class="form-control col-12 float-right" type="text" name="firstNameInput" autofocus="autofocus"
+              ngModel required>
+          </div>
+          <div class="form-group col-12 col-md-6">
+            <label for="lastName" class="mr-2 float-right mb-2">نام خانوادگی</label>
+            <img src="../../assets/img_125299.png" class="icons" id="lNameIcon" alt="">
+            <input id="lastName" class="form-control col-12 float-right" type="text" name="lastNameInput" ngModel
+              required>
+          </div>
+        </div>
+
+        <div class="row col-12 mt-3" style="direction: rtl;">
+          <div class="form-group col-12 col-md-6">
+            <label for="userPhoneNum" class="mr-2 float-right mb-2">تلفن همراه</label>
+            <img src="../../assets/phone-receiver.png" class="icons" id="phoneNumIcon" alt="">
+            <input id="userPhoneNum" class="form-control col-12 float-right" type="number" name="phoneInput" ngModel
+              required>
+          </div>
+
+          <div class="form-group col-12 col-md-6">
+            <label for="userEmail" class="mr-2 float-right mb-2">ایمیل</label>
+            <img src="../../assets/Mail_black-512.png" class="icons" id="emailIcon" alt="">
+            <input id="userEmail" class="form-control col-12 float-right" type="email" name="emailInput" ngModel
+              required>
+          </div>
+        </div>
+        
+        <div class="row col-12 mt-3" style="direction: rtl;">
+          <div class="form-group col-12 col-md-6">
+            <label for="userPassword" class="mr-2 float-right mb-2">گذرواژه</label>
+            <img src="../../assets/250130-200.png" class="icons" id="passwordIcon" alt="">
+            <input id="userPassword" class="form-control col-12 float-right" type="password" name="passwordInput" ngModel
+              required>
+          </div>
+
+          <div class="form-group col-12 col-md-6">
+            <label for="userPasswordConfirm" class="mr-2 float-right mb-2">تکرار گذرواژه</label>
+            <img src="../../assets/img_268354 (1).png" class="icons" id="passwordRepeatIcon" alt="">
+            <input id="userPasswordConfirm" class="form-control col-12 float-right" type="password" name="passwordRepeatInput" ngModel
+              required>
+          </div>
+        </div>
+
+        <div class="row col-12 mt-3" style="direction: rtl;">
+          <div class="form-group col-12 col-md-6">
+            <label for="userProvince" class="mr-2 float-right mb-2">استان</label>
+            <img src="../../assets/2175-512.png" class="icons" id="provinceIcon" alt="">
+            <input id="userProvince" class="form-control col-12 float-right" type="text" name="provinceInput" ngModel
+              required>
+          </div>
+
+          <div class="form-group col-12 col-md-6">
+            <label for="userCity" class="mr-2 float-right mb-2">شهر</label>
+            <img src="../../assets/Corporation-512.png" class="icons" id="cityIcon" alt="">
+            <input id="userCity" class="form-control col-12 float-right" type="text" name="cityInput" ngModel required>
+          </div>
+        </div>
+
+        <div class="row col-12 mt-3" style="direction: rtl;">
+          <div class="form-group col-12 col-md-6">
+            <label for="userJobkind" class="mr-2 float-right mb-2">نوع شغل</label>
+            <img src="../../assets/jobKind.png" class="icons" id="jobKindIcon" alt="">
+            <select id="userJobKind" class="form-control col-12 float-right" type="text" name="jobKindInput" ngModel
+              required>
+              <optgroup>
+                <option value="Coffeshop" selected>کافی شاپ</option>
+                <option value="Restaurant">رستوران</option>
+                <option value="Fastfood">فست فود</option>
+                <option value="Clothes store">فروشگاه پوشاک</option>
+              </optgroup>
+            </select>
+          </div>
+
+          <div class="form-group col-12 col-md-6">
+            <label for="userJobTitle" class="mr-2 float-right mb-2">عنوان شغل</label>
+            <img src="../../assets/jobTitlePic.png" class="icons" id="jobTitleIcon" alt="">
+            <input id="userJobTitle" class="form-control col-12 float-right" type="text" name="jobTitleInput" ngModel
+              required>
+          </div>
+        </div>
+
+        <div class="row col-12 mt-3" style="direction: rtl;">
+          <div class="form-group col-12">
+            <label for="buyKind" class="mr-2 float-right mb-2">نوع خرید</label>
+            <img src="../../assets/de0f740396316620e8f3ecbbbbc706f3.png" class="icons" id="marketerIcon" alt="">
+            <select id="buyKind" class="form-control col-12 float-right" type="text" name="buyKindInput" ngModel (change)="showBox()"
+              required>
+              <optgroup>
+                <option value="marketer">بازاریاب</option>
+                <option value="digikala">دیجی کالا</option>
+              </optgroup>
+            </select>
+          </div>
+        </div>  
+
+        <div class="row col-12 mt-3" style="direction: rtl;" id="marketerCodeContainer">
+          <div class="form-group col-12">
+            <label for="marketerCode" class="mr-2 float-right mb-2"> کد بازاریاب</label>
+            <img src="../../assets/Promotion_small_intestine-512.png" class="icons" id="marketerCodeIcon" alt="">
+            <input id="marketerCode" class="form-control col-12 float-right" type="text" name="marketerCodeInput"
+              ngModel required style="direction: ltr;">
+          </div>
+        </div>
+
+        <div class="row col-12 mt-3" style="direction: rtl;">
+          <div class="form-group col-12">
+            <label for="userAddress" class="mr-2 float-right mb-2">آدرس</label>
+            <img src="../../assets/location.png" class="icons" id="addressIcon" alt="">
+            <textarea id="userAddress" class="form-control col-12" type="text" name="addressInput" ngModel required>
+            </textarea>
+          </div>
+        </div>
+
+
+        <div class="form-group buttons-box mx-auto d-block col-7 col-md-5 mt-5 mb-4">
+          <button class="btn btn-custome col-12 mt-2" id="registerBtn" (click)="validateRegisterForm()">
+            ادامه
+          </button>
+        </div>
+
+      </fieldset>
+
+    </form>
+  </div>
+</div>
+<router-outlet></router-outlet>

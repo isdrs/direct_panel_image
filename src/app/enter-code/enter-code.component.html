@@ -1,0 +1,38 @@
+<div class="container-fluid">
+  <div class="row">
+    <form method="post" class="col-12 col-lg-9 col-md-9 col-xl-6" id="enterRegisterCode" (ngSubmit)="onSubmit(f)" #f="ngForm"
+      name="registerCode">
+
+      <fieldset class="rounded">
+
+        <header>
+          <h3 class="text-light">تایید شماره</h3>
+        </header>
+
+        <div class="space"></div>
+
+        <div class="form-group">
+          <img src="../../assets/icon-300x300.png" id="receiveCodeIcon" alt="">
+          <label for="enterCode">لطفا کد دریافتی را در این محل وارد کنید</label>
+          <input id="enterCode" class="form-control" type="text" name="enterCodeInput" autofocus ngModel maxlength="4"
+            minlength="4" required>
+          <small class="text-center d-block mt-2 help-block">اگر بعد از 1 دقیقه کد رو دریافت نکردین، دکمه ارسال مجدد رو
+            فشار بدین</small>
+        </div>
+
+        <div class="form-group">
+          <button type="submit" class="btn btn-custome col-12 mt-3" id="codeValidator" name="CodeValidator"
+            (click)="validateCodeInput()">تایید </button>
+        </div>
+
+        <div class="loader-container form-group">
+          <time id="setTimer" class="float-left col-12 text-center btn btn-outline-danger disabled"></time>
+          <button type="submit" class="btn btn-outline-info float-right col-12" id="sendAgainBtn">ارسال مجدد</button>
+          <div id="loader" class="loader"></div>
+        </div>
+      </fieldset>
+
+    </form>
+  </div>
+</div>
+<router-outlet></router-outlet>
