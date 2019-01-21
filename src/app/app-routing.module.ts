@@ -16,12 +16,12 @@ import { GroupsComponent } from './dashboard-page/groups/groups.component';
 import { from } from 'rxjs';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'dashboard-page', pathMatch: 'full' },
-  { path: 'login-page', component: LoginPageComponent},
+  { path: '', redirectTo: 'login-page', pathMatch: 'full' },
+  { path: 'dashboard-page', component: DashboardPageComponent},
   { path: 'register-page', component: RegisterPageComponent},
-  { 
-    path: 'dashboard-page', 
-    component: DashboardPageComponent, 
+  {
+    path: 'login-page',
+    component: LoginPageComponent,
     children: [
       {path: 'groups', component: GroupsComponent}
     ]
@@ -45,10 +45,10 @@ export class AppRoutingModule { }
 export const routingComponents = [
   LoginPageComponent,
   RegisterPageComponent,
-  DashboardPageComponent, 
-  EnterPhoneComponent, 
-  EnterCodeComponent, 
-  SocialMediasComponent, 
+  DashboardPageComponent,
+  EnterPhoneComponent,
+  EnterCodeComponent,
+  SocialMediasComponent,
   TutorialVideoComponent,
   WelcomeMessageSetComponent,
   SurveyMessageSetComponent,
@@ -56,4 +56,4 @@ export const routingComponents = [
   NewPassPageComponent,
   DeviceInfoComponent,
   GroupsComponent
-]   
+]

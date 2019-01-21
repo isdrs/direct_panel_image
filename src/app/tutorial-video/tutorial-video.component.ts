@@ -13,11 +13,12 @@ export class TutorialVideoComponent implements OnInit {
 
   }
   playVideo() {
-    var myVideo = document.getElementById("tutorialVideo");
-    if (myVideo.paused)
+    const myVideo = document.getElementById('tutorialVideo') as HTMLVideoElement;
+    if (myVideo.paused) {
       myVideo.play();
-    else
+    } else {
       myVideo.pause();
+    }
   }
 
 }

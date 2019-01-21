@@ -16,176 +16,173 @@ export class RegisterPageComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit() {
-    const numberInput = document.getElementById("userPhoneNum");
+    const numberInput = document.getElementById('userPhoneNum');
     const invalidChars = [
-      "-",
-      "+",
-      "e",
+      '-',
+      '+',
+      'e',
     ];
-    numberInput.addEventListener("input", function () {
-      this.value = this.value.replace(/[e\+\-]/gi, "");
+    numberInput.addEventListener('input', function () {
+      (this as HTMLInputElement).value = (this as HTMLInputElement).value.replace(/[e\+\-]/gi, '');
     });
-    numberInput.addEventListener("keydown", function (e) {
+    numberInput.addEventListener('keydown', function (e) {
       if (invalidChars.includes(e.key)) {
         e.preventDefault();
       }
     });
 
-    
+
   }
 
   showBox() {
-    const buyType = document.getElementById("buyKind").value;
-    if( buyType == "marketer" ) {
-      document.getElementById("marketerCodeContainer").style.display = "block";
-    }
-    else if( buyType == "digikala") {
-      document.getElementById("marketerCodeContainer").style.display = "none";
+    const buyType = (document.getElementById('buyKind') as HTMLInputElement).value;
+    if ( buyType === 'marketer' ) {
+      document.getElementById('marketerCodeContainer').style.display = 'block';
+    } else if ( buyType === 'digikala') {
+      document.getElementById('marketerCodeContainer').style.display = 'none';
     }
   }
 
-  validateRegisterForm() {   
-    const firstName = document.forms["FormRegister"]["firstNameInput"].value;
+  validateRegisterForm() {
+    const firstName = document.forms['FormRegister']['firstNameInput'].value;
 
-    if (firstName == "") {
-      alert("لطفا نام خود را وارد کنید");
-      document.getElementById("firstName").focus();
+    if (firstName === '') {
+      alert('لطفا نام خود را وارد کنید');
+      document.getElementById('firstName').focus();
       return false;
-    }
-    else if (firstName.length < 3) {
-      alert("نام نمی تواند کمتر از 3 کاراکتر باشد");
+    } else if (firstName.length < 3) {
+      alert('نام نمی تواند کمتر از 3 کاراکتر باشد');
       return false;
-    }
-
-    const lastName = document.forms["FormRegister"]["lastNameInput"].value;
-    if (lastName == "") {
-      alert("لطفا نام خانوادگی خود را وارد کنید");
-      document.getElementById("lastName").focus();
-      return false;
-    }
-    else if (lastName <= 3) {
-      alert("نام خانوادگی نمی تواند کمتر از 3 کاراکتر باشد")
     }
 
-    const phoneNum = document.forms["FormRegister"]["phoneInput"].value;
-    if (phoneNum == "") {
-      alert("لطفا شماره تلفن همراه خود را وارد کنید");
-      document.getElementById("userPhoneNum").focus();
+    const lastName = document.forms['FormRegister']['lastNameInput'].value;
+    if (lastName === '') {
+      alert('لطفا نام خانوادگی خود را وارد کنید');
+      document.getElementById('lastName').focus();
+      return false;
+    } else if (lastName <= 3) {
+      alert('نام خانوادگی نمی تواند کمتر از 3 کاراکتر باشد');
+    }
+
+    const phoneNum = document.forms['FormRegister']['phoneInput'].value;
+    if (phoneNum === '') {
+      alert('لطفا شماره تلفن همراه خود را وارد کنید');
+      document.getElementById('userPhoneNum').focus();
       return false;
     }
-    let phoneNumber = document.getElementById("userPhoneNum").value;
-    let numberPattern = /^09/g;
-    let numValidateResult = phoneNumber.match(numberPattern);
+    const phoneNumber = (document.getElementById('userPhoneNum') as HTMLInputElement).value;
+    const numberPattern = /^09/g;
+    const numValidateResult = phoneNumber.match(numberPattern);
     if (numValidateResult == null ) {
-      alert("شماره ای که وارد کرده اید صحیح نمی باشد");
-      document.getElementById("userPhoneNum").value = "";
-      document.getElementById("userPhoneNum").focus();
+      alert('شماره ای که وارد کرده اید صحیح نمی باشد');
+      (document.getElementById('userPhoneNum') as HTMLInputElement).value = '';
+      document.getElementById('userPhoneNum').focus();
       return false;
     }
-    if( phoneNumber.length <= 10 || phoneNumber.length >= 12 ) {
-      alert("شماره تلفن باید 11 رقمی باشد");
-      document.getElementById("userPhoneNum").value = "";
-      document.getElementById("userPhoneNum").focus();
+    if ( phoneNumber.length <= 10 || phoneNumber.length >= 12 ) {
+      alert('شماره تلفن باید 11 رقمی باشد');
+      (document.getElementById('userPhoneNum') as HTMLInputElement).value = '';
+      document.getElementById('userPhoneNum').focus();
       return false;
     }
 
-    const email = document.forms["FormRegister"]["emailInput"].value;
-    if (email == "") {
-      alert("لطفا ایمیل خود را وارد کنید");
-      document.getElementById("userEmail").focus();
+    const email = document.forms['FormRegister']['emailInput'].value;
+    if (email === '') {
+      alert('لطفا ایمیل خود را وارد کنید');
+      document.getElementById('userEmail').focus();
       return false;
     }
-    const emailValidate = document.getElementById("userEmail").value;
+    const emailValidate = (document.getElementById('userEmail') as HTMLInputElement).value;
     const emailPattern = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{1,4})+$/;
     const emailResult = emailValidate.match(emailPattern);
-    if( emailResult == null ) {
-      alert("ایمیلی که وارد کرده اید صحیح نمی باشد");
-      document.getElementById("userEmail").focus();
+    if ( emailResult == null ) {
+      alert('ایمیلی که وارد کرده اید صحیح نمی باشد');
+      document.getElementById('userEmail').focus();
       return false;
     }
 
-    const passwordInput = document.forms["FormRegister"]["passwordInput"].value;
-    if( passwordInput == "" ) {
-      alert("لطفا فیلد گذرواژه را پر کنید");
-      document.getElementById("userPassword").focus();
+    const passwordInput = document.forms['FormRegister']['passwordInput'].value;
+    if ( passwordInput === '' ) {
+      alert('لطفا فیلد گذرواژه را پر کنید');
+      document.getElementById('userPassword').focus();
       return false;
     }
-    if( passwordInput.length <= 7 || passwordInput.length >= 17) {
-      alert("طول گذرواژه باید بین 8 تا 16 کاراکتر باشد");
-      document.getElementById("userPassword").focus();
-      document.getElementById("userPassword").value = "";
-      return false;
-    }
-
-    const passwordRepeatInput = document.forms["FormRegister"]["passwordRepeatInput"].value;
-    if( passwordRepeatInput == "" ) {
-      alert("لطفا فیلد تکرار گذرواژه را پر کنید");
-      document.getElementById("userPasswordConfirm").focus();
-      return false;
-    }
-    if( passwordRepeatInput !== passwordInput ) {
-      alert("گذرواژه هایی که وارد کرده اید با یکدیگر همخوانی ندارند");
-      document.getElementById("userPassword").focus();
-      document.getElementById("userPassword").value = "";
-      document.getElementById("userPasswordConfirm").value = "";      
+    if ( passwordInput.length <= 7 || passwordInput.length >= 17) {
+      alert('طول گذرواژه باید بین 8 تا 16 کاراکتر باشد');
+      document.getElementById('userPassword').focus();
+      (document.getElementById('userPassword') as HTMLInputElement).value = '';
       return false;
     }
 
-    const province = document.forms["FormRegister"]["provinceInput"].value;
-    if (province == "") {
-      alert("لطفا استان خود را وارد کنید");
-      document.getElementById("userProvince").focus();
+    const passwordRepeatInput = document.forms['FormRegister']['passwordRepeatInput'].value;
+    if ( passwordRepeatInput === '' ) {
+      alert('لطفا فیلد تکرار گذرواژه را پر کنید');
+      document.getElementById('userPasswordConfirm').focus();
+      return false;
+    }
+    if ( passwordRepeatInput !== passwordInput ) {
+      alert('گذرواژه هایی که وارد کرده اید با یکدیگر همخوانی ندارند');
+      document.getElementById('userPassword').focus();
+      (document.getElementById('userPassword') as HTMLInputElement).value = '';
+      (document.getElementById('userPasswordConfirm') as HTMLInputElement).value = '';
       return false;
     }
 
-    const city = document.forms["FormRegister"]["cityInput"].value;
-    if (city == "") {
-      alert("لطفا شهر خود را وارد کنید");
-      document.getElementById("userCity").focus();
+    const province = document.forms['FormRegister']['provinceInput'].value;
+    if (province === '') {
+      alert('لطفا استان خود را وارد کنید');
+      document.getElementById('userProvince').focus();
       return false;
     }
 
-    const jobKind = document.forms["FormRegister"]["jobKindInput"].value;
-    if (jobKind == "") {
-      alert("لطفا نوع شغل را وارد کنید");
-      document.getElementById("userJobKind").focus();
+    const city = document.forms['FormRegister']['cityInput'].value;
+    if (city === '') {
+      alert('لطفا شهر خود را وارد کنید');
+      document.getElementById('userCity').focus();
       return false;
     }
 
-    const jobTitle = document.forms["FormRegister"]["jobTitleInput"].value;
-    if (jobTitle == "") {
-      alert("لطفا عنوان شغل خود را وارد کنید");
-      document.getElementById("userJobTitle").focus();
+    const jobKind = document.forms['FormRegister']['jobKindInput'].value;
+    if (jobKind === '') {
+      alert('لطفا نوع شغل را وارد کنید');
+      document.getElementById('userJobKind').focus();
       return false;
     }
-    
-    const buyKind = document.forms["FormRegister"]["buyKindInput"].value;
-    if (buyKind == "") {
-      alert("لطفا نوع خرید خود را وارد کنید");
-      document.getElementById("buyKind").focus();
+
+    const jobTitle = document.forms['FormRegister']['jobTitleInput'].value;
+    if (jobTitle === '') {
+      alert('لطفا عنوان شغل خود را وارد کنید');
+      document.getElementById('userJobTitle').focus();
       return false;
     }
-    
-    const allowedAlert = document.getElementById("marketerCodeContainer").style.display;
-    if( allowedAlert == "block" ) {
-      const marketerCode = document.forms["FormRegister"]["marketerCodeInput"].value;
-      if (marketerCode == "") {
-        alert("لطفا کد بازاریاب را وارد کنید");
-        document.getElementById("marketerCode").focus();
+
+    const buyKind = document.forms['FormRegister']['buyKindInput'].value;
+    if (buyKind === '') {
+      alert('لطفا نوع خرید خود را وارد کنید');
+      document.getElementById('buyKind').focus();
+      return false;
+    }
+
+    const allowedAlert = document.getElementById('marketerCodeContainer').style.display;
+    if ( allowedAlert === 'block' ) {
+      const marketerCode = document.forms['FormRegister']['marketerCodeInput'].value;
+      if (marketerCode === '') {
+        alert('لطفا کد بازاریاب را وارد کنید');
+        document.getElementById('marketerCode').focus();
         return false;
       }
     }
 
-    const address = document.forms["FormRegister"]["addressInput"].value;
-    if (address == "") {
-      alert("لطفا آدرس خود را وارد کنید");
-      document.getElementById("userAddress").focus();
+    const address = document.forms['FormRegister']['addressInput'].value;
+    if (address === '') {
+      alert('لطفا آدرس خود را وارد کنید');
+      document.getElementById('userAddress').focus();
       return false;
     }
 
     ///// This is just for test. /////
-    const inputts = document.getElementsByTagName("input").value;
-    if( inputts != "" ) {
+    const inputts = document.getElementsByTagName('input').item[0].value;
+    if ( inputts !== '' ) {
       this.router.navigate(['enter-code']);
     }
 

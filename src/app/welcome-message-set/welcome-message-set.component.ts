@@ -14,39 +14,39 @@ export class WelcomeMessageSetComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit() {
-    
-    
+
+
   }
 
 
   charCounter() {
-    const lng1 = document.getElementById("welcomeMessage").value;
-    const show1 = document.getElementById("charCount").innerHTML = "تعداد کاراکتر: " + lng1.length;
+    const lng1 = (document.getElementById('welcomeMessage') as HTMLInputElement).value;
+    const show1 = document.getElementById('charCount').innerHTML = 'تعداد کاراکتر: ' + lng1.length;
   }
 
   textCounter() {
-    const lng2 = document.getElementById("repeatBuyMessage").value;
-    const show2 = document.getElementById("textCount").innerHTML = "تعداد کاراکتر: " + lng2.length;
+    const lng2 = (document.getElementById('repeatBuyMessage') as HTMLInputElement).value;
+    const show2 = document.getElementById('textCount').innerHTML = 'تعداد کاراکتر: ' + lng2.length;
   }
 
 
   validateSocialMediasForm() {
-    const welcomeMessageInput = document.forms["setMessages"]["setWelcomeMessage"].value;
-    if( welcomeMessageInput == "" ) {
-      alert("لطفا متن پیام خوش آمدگویی را وارد کنید");
-      document.getElementById("welcomeMessage").focus();
+    const welcomeMessageInput = document.forms['setMessages']['setWelcomeMessage'].value;
+    if ( welcomeMessageInput === '' ) {
+      alert('لطفا متن پیام خوش آمدگویی را وارد کنید');
+      document.getElementById('welcomeMessage').focus();
       return false;
     }
 
-    const repeatBuyMessageInput = document.forms["setMessages"]["setRepeatBuyMessage"].value;
-    if(  repeatBuyMessageInput == "" ) {
-      alert("لطفا متن پیام تکرار خرید را وارد کنید");
-      document.getElementById("repeatBuyMessage").focus();
+    const repeatBuyMessageInput = document.forms['setMessages']['setRepeatBuyMessage'].value;
+    if (  repeatBuyMessageInput === '' ) {
+      alert('لطفا متن پیام تکرار خرید را وارد کنید');
+      document.getElementById('repeatBuyMessage').focus();
       return false;
     }
-    
-    const allInputs = document.getElementsByTagName("input").value;
-    if( allInputs != "" ) {
+
+    const allInputs = document.getElementsByTagName('input').item[0].value;
+    if ( allInputs !== '' ) {
       this.router.navigate(['survey-message-set']);
     }
   }
